@@ -110,14 +110,13 @@ int main()
     }
 
     cout << endl;
-    cout << "E: " << endl;
+    cout << "E: " << std::endl;
     for (int i = 0; i < size; i++) {
         for (int j = 0; j <= i; j++) {
-            std::cout << (j % 2);
+            std::cout << ((i + j) % 2 == 0 ? '1' : '0');
         }
         std::cout << std::endl;
     }
-
     cout << endl;
 
     // 5
