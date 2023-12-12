@@ -11,20 +11,15 @@ void naturalnumberswithrecurdesc(int count)
 		std::cout << count << " ";
 		naturalnumberswithrecurdesc(count - 1);
 	}
-	else
-	{
+}
+
+
+void naturalnumberswithrecurasc(int count) {
+	if (count > 0) {
+		naturalnumberswithrecurasc(count - 1);
+		std::cout << count << " ";
+	}
+	else {
 		std::cout << std::endl;
 	}
 }
-
-void naturalnumberswithrecurasc(int count) {
-	if (count <= 0)
-		return;
-
-	for (int i = 1; i <= count; ++i) {
-		std::cout << i << " ";
-	}
-
-	std::cout << std::endl;
-}
-

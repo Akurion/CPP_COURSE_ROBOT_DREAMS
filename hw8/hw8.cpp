@@ -26,8 +26,14 @@ int main()
     cout << "Enter number: ";
     cin >> count;
 
+
+
     factorialwithoutrecurs(count);
-    factorialwithrecurs(count, result);
+    result = factorialwithrecurs(count);
+
+    if (result != -1) {
+        std::cout << "Factorial of " << count << " is: " << result << std::endl;
+    }
     cout << "Factorial with recursion: " << result << endl;
 
     cout << endl;

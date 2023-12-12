@@ -9,7 +9,7 @@ void factorialwithoutrecurs(int count)
 		std::cout << "Number must be higher than 0" << std::endl;
 	else
 	{
-		for (int i = 1; i <= count; ++i)
+		for (int i = 2; i <= count; ++i)
 		{
 			factorial *= i;
 		}
