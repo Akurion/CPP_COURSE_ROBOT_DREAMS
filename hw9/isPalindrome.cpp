@@ -1,30 +1,35 @@
 #include <iostream>
 #include "isPalindrome.h"
+#include <cstring>
+#include <cctype>
+
+bool isAlphanumeric(char ch) {
+    return std::isalnum(static_cast<unsigned char>(ch)) != 0;
+}
 
 bool isPalindrome(const char str[]) {
-    int length = 0;
+    int length = strlen(str);
 
-    while (str[length] != '\0') {
-        length++;
-    }
-
-    for (int i = 0, j = length - 1; i < j; i++, j--) {
+    for (int i = 0, j = length - 1; i < j; ) {
         char leftChar = std::tolower(str[i]);
         char rightChar = std::tolower(str[j]);
 
-        while (!std::isalpha(leftChar) && i < j) {
+        while (!isAlphanumeric(leftChar) && i < j) {
             i++;
             leftChar = std::tolower(str[i]);
         }
 
-        while (!std::isalpha(rightChar) && i < j) {
+        while (!isAlphanumeric(rightChar) && i < j) {
             j--;
             rightChar = std::tolower(str[j]);
         }
 
         if (leftChar != rightChar) {
-            return false;  
+            return false;
         }
+
+        i++;
+        j--;
     }
 
     return true;

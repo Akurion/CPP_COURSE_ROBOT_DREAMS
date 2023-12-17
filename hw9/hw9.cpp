@@ -12,14 +12,29 @@ int main()
     const int SIZE = 10;
     int array[SIZE];
 
+    for (int i = 0; i < SIZE; ++i) {
+        std::cout << "Enter number for element " << i << " in array: ";
+        std::cin >> array[i];
+    }
+
     translateArray(array, SIZE);
+
+    std::cout << "Translated Array:" << std::endl;
+    for (int i = 0; i < SIZE; ++i) {
+        std::cout << array[i] << std::endl;
+    }
     std::cout << std::endl;
     std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 
     // 2
-    char str[10];
+    char str[SIZE];
+
+    std::cout << "Enter a string: ";
+    std::cin.getline(str, SIZE);
 
     upperCase(str);
+
+    std::cout << "Uppercase string: " << str << std::endl;
     std::cout << std::endl;  
 
     // 3
