@@ -1,0 +1,26 @@
+#pragma once
+
+#include <iostream>
+
+class Vector2d {
+private:
+    float x = 0.0f;
+    float y = 0.0f;
+    static int instanceCount;
+
+public:
+    Vector2d();
+    Vector2d(float x_val, float y_val);
+    Vector2d(float x0, float y0, float x1, float y1);
+    Vector2d& operator=(const Vector2d& other);
+    Vector2d operator+(const Vector2d& secondVector) const;
+    Vector2d operator-(const Vector2d& secondVector) const;
+    friend Vector2d operator+(const Vector2d& leftVector, const Vector2d& rightVector);
+    friend Vector2d operator-(const Vector2d& leftVector, const Vector2d& rightVector);
+    float operator()() const;
+    float& operator[](int i);
+    friend std::ostream& operator<<(std::ostream& os, const Vector2d& vector);
+    friend std::istream& operator>>(std::istream& is, Vector2d& vector);
+    int getInstanceCount();
+    ~Vector2d();
+};
